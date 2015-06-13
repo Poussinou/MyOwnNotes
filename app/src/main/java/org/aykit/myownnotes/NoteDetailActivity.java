@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import android.widget.TextView;
  */
 public class NoteDetailActivity extends Activity
 {
+    private final String TAG = this.getClass().getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,7 +29,14 @@ public class NoteDetailActivity extends Activity
         setContentView(R.layout.activity_note_detail);
 
         // Show the Up button in the action bar.
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getActionBar() != null)
+        {
+            getActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        else
+        {
+            Log.d(TAG, "No Actionbar was found");
+        }
 
         // savedInstanceState is non-null when there is fragment state
         // saved from previous configurations of this activity
@@ -61,13 +70,13 @@ public class NoteDetailActivity extends Activity
             {
                 if(type.equals("text/plain") )
                 {
-                    //a valid intent was received. proccess it.
+                    //a valid test-share-intent was received. proccess it.
                     proccessIntent(intent);
                 }
             }
         }
 
-        
+
     }
 
     private void proccessIntent(Intent intent)
@@ -75,6 +84,7 @@ public class NoteDetailActivity extends Activity
         TextView textView = (TextView) findViewById(R.id.note_text);
         textView.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)

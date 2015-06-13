@@ -26,13 +26,12 @@ public class DummyContent
 
     static
     {
-        // Add 5 sample items.
-        addItem(new DummyItem("1", "Item 1"));
-        addItem(new DummyItem("2", "Item 2"));
-        addItem(new DummyItem("3", "Item 3"));
-        addItem(new DummyItem("3", "Item 3"));
-        addItem(new DummyItem("4", "Yo ama"));
-        addItem(new DummyItem("5", "deine mudda"));
+        // Add 3 sample items.
+        int dummySize = 20;
+        for (int i = 1; i <= dummySize; i++)
+        {
+            addItem(new DummyItem(Integer.toString(i), "Item " + Integer.toString(i) ) );
+        }
     }
 
     private static void addItem(DummyItem item)

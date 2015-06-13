@@ -3,6 +3,9 @@ package org.aykit.myownnotes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v4.widget.DrawerLayout;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 /**
@@ -31,6 +34,12 @@ public class NoteListActivity extends Activity
      */
     private boolean mTwoPane;
 
+    //stuff for NavDrawer
+    private String[] mPlanetTitles;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -53,6 +62,17 @@ public class NoteListActivity extends Activity
         }
 
         // TODO: If exposing deep links into your app, handle intents here.
+        mPlanetTitles = getResources().getStringArray(R.array.menu_item_names);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.menu);
+
+        // Set the adapter for the list view
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+                R.layout.list_item
+                , mPlanetTitles));
+        // Set the list's click listener
+        //mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+
     }
 
     /**
