@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MyOwnNotes</string>
+    <string name="title_note_detail">New Note</string>
+</resources>
