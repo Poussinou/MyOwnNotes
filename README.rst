@@ -129,7 +129,7 @@ My Own Notes and all contributions are licensed as `GPL3`_
 .. _Let's Encrypt: http://letsencrypt.org
 .. _Moving Certificates: https://github.com/aykit/myownnotes-android/issues/72
 .. _My Own Notes App: https://github.com/aykit/myownnotes
-.. _ownCloud Notes App Version 1.0: https://github.com/owncloud/notes/tree/1.0.0
+.. _ownCloud Notes App Version 1.0: https://github.com/owncloud/notes/releases/tag/1.0.0
 .. _My Own Notes Website: https://aykit.org/sites/myownnotes.html
 .. _our blog entry about ownCloud's encryption app: https://blog.entwicklerbier.org/2014/09/misconceptions-of-owncloud-encryption/
 .. _our comment in issue #9392: https://github.com/owncloud/core/issues/9392#issuecomment-56274074
